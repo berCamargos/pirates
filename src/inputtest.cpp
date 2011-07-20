@@ -120,6 +120,7 @@ void load_models () {
     pandaActor.set_scale(0.005);
     pandaActor.reparent_to(window->get_render());
     pandaActor.set_pos(0, 10, 0);
+    
     // Loads the walk animation, parenting it to the panda node.
     window->load_model(pandaActor, "panda-walk4");
     // Tells the window to loop all animations indefinetly.
@@ -318,10 +319,10 @@ void clickUpEvent (const Event* e, void *data) {
             LPoint3f vector_end = entry->get_surface_point(window->get_render());
 			LPoint3f vector = vector_end - hit_pos;
 			if(hit_pos != NULL){
-				printf("Down: %f, %f, %f ", hit_pos.get_x(), hit_pos.get_y(), hit_pos.get_z() );
-				printf("Up: %f, %f, %f ", vector_end.get_x(), vector_end.get_y(), vector_end.get_z() );
+				printf("Down: %f, %f, %f \n", hit_pos.get_x(), hit_pos.get_y(), hit_pos.get_z() );
+				printf("Up: %f, %f, %f \n", vector_end.get_x(), vector_end.get_y(), vector_end.get_z() );
 				puts("Vector obtained:  " );//+ hit_pos + vector_end);
-				printf("Up: %f, %f, %f ", vector.get_x(), vector.get_y(), vector.get_z() );
+				printf("%f, %f, %f \n", vector.get_x(), vector.get_y(), vector.get_z() );
 			}
 			smiley.set_x(hit_pos.get_x());
             smiley.set_y(hit_pos.get_y());
